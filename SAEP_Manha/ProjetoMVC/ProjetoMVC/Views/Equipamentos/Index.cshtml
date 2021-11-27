@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProjetoMVC.Models.Equipamentos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Equipamentos</h1>
+@if (ViewBag.Perfil == "2") {
+    <p>
+        <a asp-action="Create">Cadastrar equipamento</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Equipamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipamento)
+            </td>
+            <td>
+                <img src="~/img/Imagens_Equipamentos/@Html.DisplayFor(modelItem => item.Imagem)" alt="@Html.DisplayFor(modelItem => item.Equipamento)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                @if (ViewBag.Perfil == "2")
+                { 
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                }
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

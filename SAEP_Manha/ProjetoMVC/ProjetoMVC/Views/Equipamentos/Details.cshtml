@@ -1,0 +1,67 @@
+﻿@model ProjetoMVC.Models.Equipamentos 
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Equipamentos</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Equipamento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imagem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imagem)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+    </dl>
+</div>
+<div>
+    <form action="@Url.Action("Comentar")" method="post">
+        <input type="text" value="" name="Comentario" />
+
+        <input type="hidden" value="@ViewBag.Perfil" name="IdPerfis" />
+        <input type="hidden" value="@Html.DisplayFor(model => model.Id)" name="IdEquipamentos" />
+
+        <button type="submit">Comentar</button>
+    </form>
+
+    @if(ViewBag.Comentarios != null)
+    {
+
+        @foreach (var item in ViewBag.Comentarios)
+        {
+            <p>@item.Comentario</p>
+        }
+     }
+
+
+    <a asp-action="Index">Voltar</a>
+</div>

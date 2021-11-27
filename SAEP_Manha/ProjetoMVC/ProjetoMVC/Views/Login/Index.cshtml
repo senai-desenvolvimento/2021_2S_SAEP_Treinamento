@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ProjetoMVC.Models.Usuarios>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form class="login_container" method="POST" action='@Url.Action("Logar")'>
+
+    <input type="password" name="Senha" id="password">
+
+    <div class="erro">@TempData.Peek("Mensagem")</div>
+
+    <div onclick="update()" class="button_container">
+        <button type="button" onclick="One()">1</button>
+        <button type="button" onclick="Two()">2</button>
+        <button type="button" onclick="Three()">3</button>
+
+        <button type="button" onclick="Four()">4</button>
+        <button type="button" onclick="Five()">5</button>
+        <button type="button" onclick="Six()">6</button>
+
+        <button type="button" onclick="Seven()">7</button>
+        <button type="button" onclick="Eight()">8</button>
+        <button type="button" onclick="Nine()">9</button>
+
+        <button type="button" onclick="Clear()">c</button>
+        <button type="button" onclick="Zero()">0</button>
+        <button type="submit">↵</button>
+
+    </div>
+</form>
+
+<script>
+
+        let passcode = '';
+
+        function One()   { passcode = passcode + 1; }
+        function Two()   { passcode = passcode + 2; }
+        function Three() { passcode = passcode + 3; }
+        function Four()  { passcode = passcode + 4; }
+        function Five()  { passcode = passcode + 5; }
+        function Six()   { passcode = passcode + 6; }
+        function Seven() { passcode = passcode + 7; }
+        function Eight() { passcode = passcode + 8; }
+        function Nine()  { passcode = passcode + 9; }
+        function Zero()  { passcode = passcode + 0; }
+
+        function update()
+        {
+            if(passcode.length < 7)
+            {
+                document.getElementById('password').value = passcode;
+            }
+        }
+
+        function Clear()
+        {
+            passcode = '';
+        }
+
+</script>
