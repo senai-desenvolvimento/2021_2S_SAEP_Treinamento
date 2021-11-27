@@ -1,0 +1,135 @@
+﻿:root {
+    --background: #cce2e2;
+    --background_form: #eeedeb;
+    --primary: #44babc;
+    --secondary: #35797d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+body {
+    background-color: var(--background);
+}
+
+.login_container {
+    background-color: var(--background_form);
+    margin: 40px auto;
+    width: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .button_container button {
+        width: 150px;
+        height: 150px;
+        border: solid 1px var(--primary);
+        border-radius: 50%;
+        margin: 10px;
+        font-size: 3em;
+    }
+
+        .button_container button:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+#password {
+    height: 50px;
+    width: 150px;
+    margin: 20px;
+    border: none;
+    border-bottom: solid 2px var(--secondary);
+    font-size: 3em;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+}
+
+.erro {
+    color: #fc1e8b;
+    margin: 20px;
+}
